@@ -36,7 +36,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     // project dependencies
-    implementation project(path: ':dep')
+    api project(path: ':dep')
 
     // dagger
     def dagger_version = "2.25.2"

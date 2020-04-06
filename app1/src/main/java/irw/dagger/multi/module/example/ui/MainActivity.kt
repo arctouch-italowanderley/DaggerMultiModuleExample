@@ -1,7 +1,8 @@
-package irw.dagger.multi.module.example
+package irw.dagger.multi.module.example.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import irw.dagger.multi.module.example.R
 
 class MainActivity : AppCompatActivity() {
 
