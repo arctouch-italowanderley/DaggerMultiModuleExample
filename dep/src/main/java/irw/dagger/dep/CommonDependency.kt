@@ -1,10 +1,10 @@
 package irw.dagger.dep
 
-class CommonDependencyImpl1 : CommonDependency {
+internal class CommonDependencyImpl1 : CommonDependency {
     override fun commonMethod() = "Dependency Impl 1"
 }
 
-class CommonDependencyImpl2 : CommonDependency {
+internal class CommonDependencyImpl2 : CommonDependency {
     override fun commonMethod() = "Dependency Impl 2"
 }
 

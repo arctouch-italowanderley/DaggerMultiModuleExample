@@ -3,11 +3,12 @@ package irw.dagger.feature2.di
 import dagger.BindsInstance
 import dagger.Subcomponent
 import irw.dagger.dep.DepType
+import irw.dagger.dep.di.CommonDependencyModule
 import irw.dagger.feature2.di.scope.Feature2Scope
 import irw.dagger.feature2.ui.Feature2Fragment
 
 @Feature2Scope
-@Subcomponent(modules = [Feature2Module::class])
+@Subcomponent(modules = [CommonDependencyModule::class])
 interface Feature2Component {
 
     @Subcomponent.Factory

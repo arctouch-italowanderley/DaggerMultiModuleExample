@@ -1,4 +1,4 @@
-package irw.dagger.feature2.di
+package irw.dagger.dep.di
 
 import dagger.Module
 import dagger.Provides
@@ -8,10 +8,10 @@ import irw.dagger.dep.CommonDependencyImpl2
 import irw.dagger.dep.DepType
 
 @Module
-class Feature2Module {
+class CommonDependencyModule {
 
     @Provides
-    fun providesDep2(depType: DepType): CommonDependency = when (depType) {
+    fun providesDep(depType: DepType): CommonDependency = when (depType) {
         DepType.DEP1 -> CommonDependencyImpl1()
         DepType.DEP2 -> CommonDependencyImpl2()
     }
