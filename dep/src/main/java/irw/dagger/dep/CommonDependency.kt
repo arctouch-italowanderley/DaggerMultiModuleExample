@@ -11,7 +11,3 @@ internal class CommonDependencyImpl2 : CommonDependency {
 interface CommonDependency {
     fun commonMethod(): String
 }
-
-enum class DepType {
-    DEP1, DEP2
-}

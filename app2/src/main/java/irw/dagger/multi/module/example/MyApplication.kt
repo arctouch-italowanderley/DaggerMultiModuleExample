@@ -1,7 +1,6 @@
 package irw.dagger.multi.module.example
 
 import android.app.Application
-import irw.dagger.dep.DepType
 import irw.dagger.feature2.di.Feature2Component
 import irw.dagger.feature2.di.Feature2ComponentProvider
 import irw.dagger.multi.module.example.di.AppComponent
@@ -18,5 +17,5 @@ open class MyApplication : Application(), Feature2ComponentProvider {
     }
 
     override fun provideFeature2Component(): Feature2Component =
-        appComponent.feature2Component().create(DepType.DEP2)
+        appComponent.feature2Component().create()
 }
