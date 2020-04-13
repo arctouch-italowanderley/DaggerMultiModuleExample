@@ -40,12 +40,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     // project dependencies
+    implementation project(path: ':dicore')
+    implementation project(path: ':dep')
     implementation project(path: ':feat1')
     implementation project(path: ':feat2')
-    implementation project(path: ':dep')
 
     // dagger
-    def dagger_version = "2.25.2"
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger_version"

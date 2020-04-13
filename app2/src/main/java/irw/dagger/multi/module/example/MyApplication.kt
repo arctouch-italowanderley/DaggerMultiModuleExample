@@ -1,21 +1,12 @@
 package irw.dagger.multi.module.example
 
-import android.app.Application
-import irw.dagger.feature2.di.Feature2Component
-import irw.dagger.feature2.di.Feature2ComponentProvider
+import irw.dagger.dicore.BaseApplication
 import irw.dagger.multi.module.example.di.AppComponent
 import irw.dagger.multi.module.example.di.DaggerAppComponent
 
-open class MyApplication : Application(), Feature2ComponentProvider {
+open class MyApplication : BaseApplication<AppComponent>() {
 
-    val appComponent: AppComponent by lazy {
-        initializeComponent()
-    }
-
-    open fun initializeComponent(): AppComponent {
+    override fun initializeComponent(): AppComponent {
         return DaggerAppComponent.factory().create(applicationContext)
     }
-
-    override fun provideFeature2Component(): Feature2Component =
-        appComponent.feature2Component().create()
 }

@@ -13,5 +13,5 @@ interface Feature2Component {
         fun create(): Feature2Component
     }
 
-    fun inject(fragment: Feature2Fragment)
+    val fragment: Feature2Fragment
 }
