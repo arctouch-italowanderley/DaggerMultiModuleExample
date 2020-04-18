@@ -1,13 +1,12 @@
 package irw.dagger.dep.di
 
-import dagger.Module
-import dagger.Provides
 import irw.dagger.dep.CommonDependency
 import irw.dagger.dep.CommonDependencyImpl2
+import org.koin.dsl.module
 
-@Module
-class CommonDependency2Module {
-
-    @Provides
-    fun providesDep(): CommonDependency = CommonDependencyImpl2()
+val commonDependency2Module = module {
+    factory {
+        @Suppress("USELESS_CAST")
+        CommonDependencyImpl2() as CommonDependency
+    }
 }

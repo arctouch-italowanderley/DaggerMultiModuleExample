@@ -45,8 +45,7 @@ dependencies {
     implementation project(path: ':feat2')
     implementation project(path: ':feat3')
 
-    // dagger
-    implementation "com.google.dagger:dagger:$dagger_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger_version"
-    kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger_version"
+    // koin
+    implementation "org.koin:koin-androidx-fragment:$koin_version"
+    implementation "org.koin:koin-androidx-scope:$koin_version"
 }

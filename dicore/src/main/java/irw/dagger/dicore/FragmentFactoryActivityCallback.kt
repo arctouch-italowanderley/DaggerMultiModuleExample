@@ -4,15 +4,13 @@ import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
-import javax.inject.Inject
+import org.koin.androidx.fragment.android.setupKoinFragmentFactory
 
-class FragmentFactoryActivityCallback @Inject constructor(
-    private val fragmentFactory: InjectFragmentFactory
-) : Application.ActivityLifecycleCallbacks {
+class FragmentFactoryActivityCallback : Application.ActivityLifecycleCallbacks {
 
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
         if (activity is FragmentActivity) {
-            activity.supportFragmentManager.fragmentFactory = fragmentFactory
+            activity.setupKoinFragmentFactory()
         }
     }
 

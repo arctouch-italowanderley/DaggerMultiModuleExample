@@ -11,13 +11,14 @@ import irw.dagger.feature2.R
 import irw.dagger.feature2.deps.LocalDependency
 import irw.dagger.feature2.deps.ScopedDependency
 import kotlinx.android.synthetic.main.fragment_feature2.*
-import javax.inject.Inject
+import org.koin.ext.getOrCreateScope
 
-class Feature2Fragment @Inject constructor(
-    private val dependency: CommonDependency,
-    private val scopedDep: ScopedDependency,
-    private val localDependency: LocalDependency
+class Feature2Fragment(
+    private val dependency: CommonDependency
 ) : Fragment() {
+
+    private val scopedDep: ScopedDependency by getOrCreateScope().inject()
+    private val localDependency: LocalDependency by getOrCreateScope().inject()
 
     override fun onCreateView(
         inflater: LayoutInflater,

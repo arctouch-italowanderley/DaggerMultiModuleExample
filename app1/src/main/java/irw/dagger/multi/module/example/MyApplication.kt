@@ -1,12 +1,12 @@
 package irw.dagger.multi.module.example
 
+import irw.dagger.dep.di.commonDependency1Module
 import irw.dagger.dicore.BaseApplication
-import irw.dagger.multi.module.example.di.AppComponent
-import irw.dagger.multi.module.example.di.DaggerAppComponent
+import irw.dagger.feature2.di.feature2Module
+import org.koin.core.module.Module
 
-open class MyApplication : BaseApplication<AppComponent>() {
+open class MyApplication : BaseApplication() {
 
-    override fun initializeComponent(): AppComponent {
-        return DaggerAppComponent.factory().create(applicationContext)
-    }
+    override val modules: List<Module>
+        get() = listOf(feature2Module, commonDependency1Module)
 }
